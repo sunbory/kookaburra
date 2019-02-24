@@ -8,7 +8,7 @@ import (
 
 type SeekableFile struct {
 	*torrent.File
-	*torrent.Reader
+	torrent.Reader
 }
 
 func (self *SeekableFile) Seek(off int64, whence int) (ret int64, err error) {
