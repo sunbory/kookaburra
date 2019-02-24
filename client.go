@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/anacrolix/dht"
+// 	"github.com/anacrolix/dht"
 	"github.com/anacrolix/torrent"
 	"github.com/anacrolix/torrent/metainfo"
 	humanize "github.com/dustin/go-humanize"
