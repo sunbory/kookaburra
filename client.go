@@ -39,11 +39,8 @@ type Client struct {
 }
 
 func NewClient(config *ClientConfig) (*Client, error) {
-	torrentClient, err := torrent.NewClient(&torrent.Config{
+	torrentClient, err := torrent.NewClient(&torrent.ClientConfig{
 		DataDir: config.WorkingDir,
-		DHTConfig: dht.ServerConfig{
-			StartingNodes: dht.GlobalBootstrapAddrs,
-		},
 	})
 
 	if err != nil {
