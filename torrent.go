@@ -38,7 +38,7 @@ func (self *Torrent) Files() []*SeekableFile {
 
 	for i := 0; i < len(files); i++ {
 		seekableFile := &SeekableFile{
-			File:   &files[i],
+			File:   files[i],
 			Reader: self.Torrent.NewReader(),
 		}
 
