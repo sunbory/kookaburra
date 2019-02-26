@@ -39,10 +39,10 @@ type Client struct {
 }
 
 func NewClient(config *ClientConfig) (*Client, error) {
-	torrentClient, err := torrent.NewClient(&torrent.ClientConfig{
-		DataDir: config.WorkingDir,
-	})
-
+	cfg := torrent.NewDefaultClientConfig()
+	cfg.DataDir = config.WorkingDir
+	
+	torrentClient, err := torrent.NewClient(cfg)
 	if err != nil {
 		return nil, errors.Wrap(err, "creating torrent client")
 	}
